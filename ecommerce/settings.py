@@ -25,7 +25,8 @@ SECRET_KEY = 'bi6@b(9cet7qbrq)@0k%^w*@9pu@k8telu#vqghlch@b@xks+4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-a6969774-b9c4-4fe2-a2e1-c023b90373c3.ws-eu01.gitpod.io']
+ALLOWED_HOSTS = ['8000-a6969774-b9c4-4fe2-a2e1-c023b90373c3.ws-eu01.gitpod.io',
+                         'localhost']
 
 
 # Application definition
@@ -104,7 +105,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
-    'accounts.backends.CaseInsensitiveAuth'
+    'accounts.backends.EmailAuth'
 ]
 
 # Internationalization
@@ -125,5 +126,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
