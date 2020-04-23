@@ -4,3 +4,6 @@ db.sqlite3
 env.py
 env.py
 env.py
+*.png
+static
+media
